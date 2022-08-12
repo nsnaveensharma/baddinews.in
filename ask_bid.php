@@ -85,7 +85,7 @@ if ($recaptcha->success == true && $recaptcha->score >= 0.5 && $recaptcha->actio
     $recaptcha_response = $_POST['recaptcha_response'];
     // Make the POST request
     $recaptcha = file_get_contents($recaptcha_url . '?secret=' . $recaptcha_secret . '&response=' . $recaptcha_response);
-    $recaptcha = json_encode($recaptcha, JSON_NUMERIC_CHECK);
+    $recaptcha = json_decode($recaptcha);
     print $recaptcha;
   }
 

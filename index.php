@@ -7,7 +7,7 @@
     <title>Baddinews.in | Website for Sale | News about Baddi, Barotiwala and Nalagarh | For Sale</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js?render=6LeySAoTAAAAAOrwF36jrXG-AlZW5X9JvgYz2W-O"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
 <body class="bg-red-400">
 
@@ -30,7 +30,10 @@
                 <div class="w-1/2">Mobile No.</div><div><input id="mobile_no" class="border-[1px] border-gray-700 rounded-md" type="text" size="14" placeholder="7864576098"/></div>
              </div>
             <div class="mt-4">
-             <input type="submit" id="ask_bid" class="border-[1px] p-2 border-gray-800 rounded-md text-sm bg-blue-800 text-white hover:bg-blue-700" value="Ask Bid"/>
+             <button id="ask_bid" data-sitekey="6LeySAoTAAAAAOrwF36jrXG-AlZW5X9JvgYz2W-O" data-callback='onSubmit' data-action='submit'
+             class="g-recaptcha border-[1px] p-2 border-gray-800 rounded-md text-sm bg-blue-800 text-white hover:bg-blue-700">
+                Ask Bid</button>
+
             </div>
         </form>
          </div>
@@ -41,7 +44,8 @@
 
 <script>
 $(document).ready(function() {
-    $(document).on("click", "#ask_bid", function(e){
+function onSubmit(token) {
+
         e.preventDefault();
         var post_url = "/ask_bid.php";
         var bid_price = $("#bid_price").val();
@@ -76,8 +80,9 @@ $(document).ready(function() {
              });
          
             
-    }
-    });
+    }    
+   }
+   
 });
 
 </script>

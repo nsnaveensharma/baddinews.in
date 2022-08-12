@@ -4,6 +4,8 @@
 // $request_body = file_get_contents('php://input');
 // $data = json_decode($request_body, true);
 
+date_default_timezone_set("Asia/Calcutta");
+
 if ($_POST['bid_price'] && $_POST['email_id'] && $_POST['mobile']) {
 
 

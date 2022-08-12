@@ -41,7 +41,6 @@
 
 <script>
 $(document).ready(function() {
-  grecaptcha.ready(function() {
     $(document).on("click", "#ask_bid", function(e){
         e.preventDefault();
         var post_url = "/ask_bid.php";
@@ -79,7 +78,6 @@ $(document).ready(function() {
             
     }
     });
-});
 });
 
 </script>

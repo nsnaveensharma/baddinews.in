@@ -12,7 +12,7 @@
 
 <div class="p-4 bg-white">
    <h1 class="text-4xl font-bold text-center">
-          Website is for Sale...
+          Website is for Sale....
    </h1>
 </div>      
 

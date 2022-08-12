@@ -80,13 +80,13 @@ if ($recaptcha->success == 1 && $recaptcha->score >= 0.5 && $recaptcha->action =
         "result" => false,
         "message" => "Captcha Score is not ok, Pls try again or sent direct mail to incarnation_enterprises@outlook.com"
     );
-    $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
-    $recaptcha_secret = '6LeCjW0hAAAAAFp0tmQjJ0wf1fdb_bVy1Kk5fHnF'; // Insert your secret key here
-    $recaptcha_response = $_POST['recaptcha_response'];
-    // Make the POST request
-    $recaptcha = file_get_contents($recaptcha_url . '?secret=' . $recaptcha_secret . '&response=' . $recaptcha_response);
-    $recaptcha = json_decode($recaptcha);
-    print $recaptcha->action;
+    // $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
+    // $recaptcha_secret = '6LeCjW0hAAAAAFp0tmQjJ0wf1fdb_bVy1Kk5fHnF'; // Insert your secret key here
+    // $recaptcha_response = $_POST['recaptcha_response'];
+    // // Make the POST request
+    // $recaptcha = file_get_contents($recaptcha_url . '?secret=' . $recaptcha_secret . '&response=' . $recaptcha_response);
+    // $recaptcha = json_decode($recaptcha);
+    // print $recaptcha->action;
   }
 
 }
@@ -100,6 +100,6 @@ else{
 }
 
 
-//  print json_encode($data, JSON_NUMERIC_CHECK);
+ print json_encode($data, JSON_NUMERIC_CHECK);
 
 ?>

@@ -42,7 +42,7 @@
 $(document).ready(function() {
     $(document).on("click", "#ask_bid", function(e){
         e.preventDefault();
-        var post_url = "ask_bid.php";
+        var post_url = "/ask_bid.php";
         var bid_price = $("#bid_price").val();
         var email = $("#email_id").val();
         var mobile = $("#mobile_no").val();

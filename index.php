@@ -30,7 +30,7 @@
                 <div class="w-1/2">Mobile No.</div><div><input id="mobile_no" class="border-[1px] border-gray-700 rounded-md" type="text" size="14" placeholder="7864576098"/></div>
              </div>
             <div class="mt-4">
-             <button id="ask_bid" data-sitekey="6LeySAoTAAAAAOrwF36jrXG-AlZW5X9JvgYz2W-O" data-callback='onSubmit' data-action='submit'
+             <button id="ask_bid" data-sitekey="6LeCjW0hAAAAAERNxEFVk6jnNA8p8BV5wkp43vuu" data-callback='onSubmit' data-action='submit'
              class="g-recaptcha border-[1px] p-2 border-gray-800 rounded-md text-sm bg-blue-800 text-white hover:bg-blue-700">
                 Ask Bid</button>
 

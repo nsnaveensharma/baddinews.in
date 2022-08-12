@@ -67,7 +67,6 @@ $(document).on("submit", "#send_bid", function(e){
                         url : post_url,
                         type: "POST",
                         data : formData,
-                        dataType: 'json',
                         success: function(data, textStatus, jqXHR)
                         {
                             //data - response from server

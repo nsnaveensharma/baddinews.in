@@ -76,7 +76,7 @@ function submitResponse(){
                         success: function(data, textStatus, jqXHR)
                         {
                             //data - response from server
-                            alert(json.PARSE(data).message);
+                            alert(jQuery.parseJSON(data).message);
                             $("#bid_price").val("");
                             $("#email_id").val("");
                             $("#mobile_no").val("");

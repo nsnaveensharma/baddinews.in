@@ -10,7 +10,7 @@ if ($_POST['bid_price'] && $_POST['email_id'] && $_POST['mobile'] && $_POST['rec
 
     // Build POST request to get the reCAPTCHA v3 score from Google
 $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
-$recaptcha_secret = '6LeCjW0hAAAAAERNxEFVk6jnNA8p8BV5wkp43vuu'; // Insert your secret key here
+$recaptcha_secret = '6LeCjW0hAAAAAFp0tmQjJ0wf1fdb_bVy1Kk5fHnF'; // Insert your secret key here
 $recaptcha_response = $_POST['recaptcha_response'];
  
 // Make the POST request

@@ -7,6 +7,7 @@
     <title>Baddinews.in | Website for Sale | News about Baddi, Barotiwala and Nalagarh | For Sale</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LeySAoTAAAAAOrwF36jrXG-AlZW5X9JvgYz2W-O"></script>
 </head>
 <body class="bg-red-400">
 
@@ -51,25 +52,31 @@ $(document).ready(function() {
             alert("Input Fields are found empty, Kindly recheck and try again.");
         }
         else{
-            const formData = {"bid_price": bid_price, "email_id": email, "mobile":mobile};
-            $.ajax
-            ({
-                url : post_url,
-                type: "POST",
-                data : formData,
-                success: function(data, textStatus, jqXHR)
-                {
-                    //data - response from server
-                    alert(json.PARSE(data).message);
-                    $("#bid_price").val("");
-                    $("#email_id").val("");
-                    $("#mobile_no").val("");
-                },
-                error: function (jqXHR, textStatus, errorThrown)
-                {
-                console.log(errorThrown);
-                }
-            });
+            grecaptcha.ready(function() {
+              grecaptcha.execute('reCAPTCHA_site_key', {action: 'submit'}).then(function(token) {
+              // Add your logic to submit to your backend server here.
+                    const formData = {"bid_price": bid_price, "email_id": email, "mobile":mobile};
+                    $.ajax
+                    ({
+                        url : post_url,
+                        type: "POST",
+                        data : formData,
+                        success: function(data, textStatus, jqXHR)
+                        {
+                            //data - response from server
+                            alert(json.PARSE(data).message);
+                            $("#bid_price").val("");
+                            $("#email_id").val("");
+                            $("#mobile_no").val("");
+                        },
+                        error: function (jqXHR, textStatus, errorThrown)
+                        {
+                        console.log(errorThrown);
+                        }
+                    });
+             });
+           });
+            
     }
     });
 });

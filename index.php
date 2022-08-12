@@ -41,6 +41,7 @@
 
 <script>
 $(document).ready(function() {
+  grecaptcha.ready(function() {
     $(document).on("click", "#ask_bid", function(e){
         e.preventDefault();
         var post_url = "/ask_bid.php";
@@ -52,7 +53,6 @@ $(document).ready(function() {
             alert("Input Fields are found empty, Kindly recheck and try again.");
         }
         else{
-            grecaptcha.ready(function() {
               grecaptcha.execute('reCAPTCHA_site_key', {action: 'submit'}).then(function(token) {
               // Add your logic to submit to your backend server here.
                     const formData = {"bid_price": bid_price, "email_id": email, "mobile":mobile};
@@ -75,11 +75,13 @@ $(document).ready(function() {
                         }
                     });
              });
-           });
+         
             
     }
     });
 });
+});
+
 </script>
 
 </html>

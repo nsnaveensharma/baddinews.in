@@ -31,7 +31,7 @@
              </div>
             <div class="mt-4">
             <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
-             <button id="ask_bid"
+             <button id="ask_bid" type="submit"
              class="border-[1px] p-2 border-gray-800 rounded-md text-sm bg-blue-800 text-white hover:bg-blue-700">
                 Ask Bid</button>
 
@@ -49,11 +49,12 @@ grecaptcha.ready(function () {
       var recaptchaResponse = document.getElementById('recaptchaResponse');
       recaptchaResponse.value = token;
       // Make the Ajax call here
+      submitResponse();
    });
 });
 
 function submitResponse(){
-    
+   $(document).on("submit", "#send_bid", function(e){ 
         var post_url = "/ask_bid.php";
         var bid_price = $("#bid_price").val();
         var email = $("#email_id").val();
@@ -85,9 +86,10 @@ function submitResponse(){
                         }
                     });
              });
-         
             
-    }    
+            }
+
+    });    
 }
 
 </script>

@@ -86,7 +86,7 @@ if ($recaptcha["success"] == 1 && $recaptcha["action"] == 'submit') {
     // Make the POST request
     $recaptcha = file_get_contents($recaptcha_url . '?secret=' . $recaptcha_secret . '&response=' . $recaptcha_response);
     $recaptcha = json_decode($recaptcha, true);
-    print $recaptcha["score"];
+    print $recaptcha["success"];
   }
 
 }

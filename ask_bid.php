@@ -48,7 +48,7 @@ if ($_POST['bid_price'] && $_POST['email_id'] && $_POST['mobile']) {
         $subject = "Received Your Bid to Purchase Baddinews.in";
         $message = "Dear Sir/Madam, We have receieved your bid of Rs. $bid_price . We are in process of auction. We will contact you soon. If you have immediate need of this domain. Kindly revert back.";
         $headers = "From:" . $from;
-        if(mail($to,$subject,$message, $headers)) {
+        if(mail($to,$subject,$message, "Cc: incarnation_enterprises@outlook.com\r\nBcc: naveensharma.ns@outlook.com", $headers)) {
             $data = array(
                 "result" => true,
                 "message" => "Sent the mail successfully."

@@ -16,7 +16,7 @@ $recaptcha_response = $_POST['recaptcha_response'];
 // Make the POST request
 $recaptcha = file_get_contents($recaptcha_url . '?secret=' . $recaptcha_secret . '&response=' . $recaptcha_response);
 
-$recaptcha = json_decode($recaptcha);
+$recaptcha = json_decode($recaptcha, true);
 // Take action based on the score returned  $recaptcha->success == 1 && $recaptcha->score >= 0.5 && $recaptcha->action == 'submit'
 if ($recaptcha->success == true && $recaptcha->action === 'submit') {
 

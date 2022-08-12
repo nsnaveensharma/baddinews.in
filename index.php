@@ -60,7 +60,7 @@ $(document).ready(function() {
                 success: function(data, textStatus, jqXHR)
                 {
                     //data - response from server
-                    alert(data.message);
+                    alert(json.PARSE(data).message);
                     $("#bid_price").val("");
                     $("#email_id").val("");
                     $("#mobile_no").val("");

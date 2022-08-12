@@ -78,7 +78,7 @@ if ($recaptcha->success == true && $recaptcha->score >= 0.5 && $recaptcha->actio
     // Score less than 0.5 indicates suspicious activity. Return an error
     $data = array(
         "result" => false,
-        "message" => "Captcha Score is not ok, Pls try again or sent direct mail to incarnation_enterprises@outlook.com " + $recaptcha->success + $recaptcha->score
+        "message" => "Captcha Score is not ok, Pls try again or sent direct mail to incarnation_enterprises@outlook.com " . $recaptcha->success . $recaptcha->score
     );
 
 }

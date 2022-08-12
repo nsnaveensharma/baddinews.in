@@ -45,7 +45,7 @@
 
 <script>
 grecaptcha.ready(function () {
-   grecaptcha.execute('6LeCjW0hAAAAAERNxEFVk6jnNA8p8BV5wkp43vuu', { action: 'contact' }).then(function (token) {
+   grecaptcha.execute('6LeCjW0hAAAAAERNxEFVk6jnNA8p8BV5wkp43vuu', { action: 'submit' }).then(function (token) {
       var recaptchaResponse = document.getElementById('recaptchaResponse');
       recaptchaResponse.value = token;
    });
@@ -58,11 +58,13 @@ $(document).on("submit", "#send_bid", function(e){
         var email = $("#email_id").val();
         var mobile = $("#mobile_no").val();
 
+        var recaptchaResponse = document.getElementById('recaptchaResponse');
+
         if(bid_price === "" || email === "" || mobile === "" || post_url != "/ask_bid.php"){
             alert("Input Fields are found empty, Kindly recheck and try again.");
         }
         else{
-                    const formData = {"bid_price": bid_price, "email_id": email, "mobile":mobile};
+                    const formData = {"bid_price": bid_price, "email_id": email, "mobile":mobile, "recaptcha_response": recaptchaResponse};
                     $.ajax
                     ({
                         url : post_url,

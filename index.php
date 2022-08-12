@@ -48,13 +48,10 @@ grecaptcha.ready(function () {
    grecaptcha.execute('6LeCjW0hAAAAAERNxEFVk6jnNA8p8BV5wkp43vuu', { action: 'contact' }).then(function (token) {
       var recaptchaResponse = document.getElementById('recaptchaResponse');
       recaptchaResponse.value = token;
-      // Make the Ajax call here
-      submitResponse();
    });
 });
 
-function submitResponse(){
-   $(document).on("submit", "#send_bid", function(e){ 
+$(document).on("submit", "#send_bid", function(e){ 
         e.preventDefault();
         var post_url = "/ask_bid.php";
         var bid_price = $("#bid_price").val();
@@ -88,7 +85,6 @@ function submitResponse(){
             }
 
     });    
-}
 
 </script>
 

@@ -78,7 +78,7 @@ if($recaptcha["success"] == 1 && $recaptcha["score"] >= 0.5 && $recaptcha["actio
     // Score less than 0.5 indicates suspicious activity. Return an error
     $data = array(
         "result" => false,
-        "message" => "Captcha Score is not ok, Pls try again or sent direct mail to incarnation_enterprises@outlook.com"
+        "message" => "Captcha Score is not ok, Pls try again or sent direct mail to incarnation_enterprises@outlook.com " . json_encode($recaptcha)
     );
     // $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
     // $recaptcha_secret = '6LeCjW0hAAAAAFp0tmQjJ0wf1fdb_bVy1Kk5fHnF'; // Insert your secret key here

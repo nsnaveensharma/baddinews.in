@@ -73,7 +73,6 @@ if ($recaptcha->success == true && $recaptcha->score >= 0.5 && $recaptcha->actio
         }
 
      }
-     print json_encode($data, JSON_NUMERIC_CHECK);
    
 } else {
     // Score less than 0.5 indicates suspicious activity. Return an error
@@ -82,7 +81,6 @@ if ($recaptcha->success == true && $recaptcha->score >= 0.5 && $recaptcha->actio
         "message" => "Captcha Score is not ok, Pls try again or sent direct mail to incarnation_enterprises@outlook.com"
     );
 
-    print json_encode($data, JSON_NUMERIC_CHECK);
 }
 
 }
@@ -93,9 +91,9 @@ else{
         "message" => "No data posted to server side, contact at incarnation_enterprises@outlook.com"
     );
 
-    print json_encode($data, JSON_NUMERIC_CHECK);
-
 }
 
+
+print json_encode($data, JSON_NUMERIC_CHECK);
 
 ?>

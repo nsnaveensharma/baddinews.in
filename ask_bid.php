@@ -1,15 +1,15 @@
 <?php
 
 
-$request_body = file_get_contents('php://input');
-$data = json_decode($request_body, true);
+// $request_body = file_get_contents('php://input');
+// $data = json_decode($request_body, true);
 
-if (isset($data)) {
+if ($_POST['bid_price'] && $_POST['email_id'] && $_POST['mobile']) {
 
 
-    $bid_price = $data['bid_price'];
-    $email_id = $data['email_id'];
-    $mobile = $data['mobile'];
+    $bid_price = $_POST['bid_price'];
+    $email_id = $_POST['email_id'];
+    $mobile = $_POST['mobile'];
 
     if($bid_price == "" || $email_id == "" || $mobile == ""){
 

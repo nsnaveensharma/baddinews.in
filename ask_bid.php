@@ -18,7 +18,7 @@ $recaptcha = file_get_contents($recaptcha_url . '?secret=' . $recaptcha_secret .
 
 $recaptcha = json_decode($recaptcha);
 // Take action based on the score returned
-if ($recaptcha->success == true && $recaptcha->score >= 0.5 && $recaptcha->action == 'submit') {
+if ($recaptcha->success == 1 && $recaptcha->score >= 0.5 && $recaptcha->action == 'submit') {
 
     $bid_price = $_POST['bid_price'];
     $email_id = $_POST['email_id'];
@@ -86,7 +86,7 @@ if ($recaptcha->success == true && $recaptcha->score >= 0.5 && $recaptcha->actio
     // Make the POST request
     $recaptcha = file_get_contents($recaptcha_url . '?secret=' . $recaptcha_secret . '&response=' . $recaptcha_response);
     $recaptcha = json_decode($recaptcha);
-    print $recaptcha->success;
+    print $recaptcha->score;
   }
 
 }

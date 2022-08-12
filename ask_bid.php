@@ -6,7 +6,7 @@
 
 date_default_timezone_set("Asia/Calcutta");
 
-if ($_POST['bid_price'] && $_POST['email_id'] && $_POST['mobile']) {
+if ($_POST['bid_price'] && $_POST['email_id'] && $_POST['mobile'] && $_POST['recaptcha_response']) {
 
     // Build POST request to get the reCAPTCHA v3 score from Google
 $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';

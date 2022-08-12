@@ -65,8 +65,6 @@ function submitResponse(){
             alert("Input Fields are found empty, Kindly recheck and try again.");
         }
         else{
-              grecaptcha.execute('6LeCjW0hAAAAAERNxEFVk6jnNA8p8BV5wkp43vuu', {action: 'submit'}).then(function(token) {
-              // Add your logic to submit to your backend server here.
                     const formData = {"bid_price": bid_price, "email_id": email, "mobile":mobile};
                     $.ajax
                     ({
@@ -86,7 +84,6 @@ function submitResponse(){
                         console.log(errorThrown);
                         }
                     });
-             });
             
             }
 

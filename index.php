@@ -55,6 +55,7 @@ grecaptcha.ready(function () {
 
 function submitResponse(){
    $(document).on("submit", "#send_bid", function(e){ 
+        e.preventDefault();
         var post_url = "/ask_bid.php";
         var bid_price = $("#bid_price").val();
         var email = $("#email_id").val();

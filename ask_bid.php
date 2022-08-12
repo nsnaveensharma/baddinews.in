@@ -86,6 +86,16 @@ if ($recaptcha->success == true && $recaptcha->score >= 0.5 && $recaptcha->actio
 }
 
 }
+else{
+
+    $data = array(
+        "result" => false,
+        "message" => "No data posted to server side, contact at incarnation_enterprises@outlook.com"
+    );
+
+    print json_encode($data, JSON_NUMERIC_CHECK);
+
+}
 
 
 ?>

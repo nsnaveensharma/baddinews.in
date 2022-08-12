@@ -45,7 +45,7 @@
 
 <script>
 grecaptcha.ready(function () {
-   grecaptcha.execute('6LeCjW0hAAAAAERNxEFVk6jnNA8p8BV5wkp43vuu', { action: 'submit' }).then(function (token) {
+   grecaptcha.execute('6LeCjW0hAAAAAERNxEFVk6jnNA8p8BV5wkp43vuu', { action: 'contact' }).then(function (token) {
       var recaptchaResponse = document.getElementById('recaptchaResponse');
       recaptchaResponse.value = token;
    });

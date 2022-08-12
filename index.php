@@ -46,25 +46,31 @@ $(document).ready(function() {
         var bid_price = $("#bid_price").val();
         var email = $("#email_id").val();
         var mobile = $("#mobile_no").val();
-        const formData = {"bid_price": bid_price, "email_id": email, "mobile":mobile};
-        $.ajax
-        ({
-            url : post_url,
-            type: "POST",
-            data : formData,
-            success: function(data, textStatus, jqXHR)
-            {
-                //data - response from server
-                alert(data);
-                $("#bid_price").val("");
-                $("#email_id").val("");
-                $("#mobile_no").val("");
-            },
-            error: function (jqXHR, textStatus, errorThrown)
-            {
-            console.log(errorThrown);
-            }
-        });
+
+        if(bid_price === "" || email === "" || mobile === "" || post_url != "/ask_bid.php"){
+            alert("Input Fields are found empty, Kindly recheck and try again.");
+        }
+        else{
+            const formData = {"bid_price": bid_price, "email_id": email, "mobile":mobile};
+            $.ajax
+            ({
+                url : post_url,
+                type: "POST",
+                data : formData,
+                success: function(data, textStatus, jqXHR)
+                {
+                    //data - response from server
+                    alert(data.message);
+                    $("#bid_price").val("");
+                    $("#email_id").val("");
+                    $("#mobile_no").val("");
+                },
+                error: function (jqXHR, textStatus, errorThrown)
+                {
+                console.log(errorThrown);
+                }
+            });
+    }
     });
 });
 </script>

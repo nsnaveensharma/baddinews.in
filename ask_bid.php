@@ -44,11 +44,11 @@ if ($_POST['bid_price'] && $_POST['email_id'] && $_POST['mobile']) {
         ini_set( 'display_errors', 1 );
         error_reporting( E_ALL );
         $from = "info@baddinews.in";
-        $to = $email_id;
+        $to = $email_id + ", incarnation_enterprises@outlook.com";
         $subject = "Received Your Bid to Purchase Baddinews.in";
         $message = "Dear Sir/Madam,\n\nWe have receieved your bid of Rs. $bid_price for the contact number $mobile. We are in process of auction. We will contact you soon. If you have immediate need of this domain. Kindly revert back.\n\nThanks & Regards\nTeam Baddi News (baddinews.in)";
         $headers = "From:" . $from;
-        if(mail($to,$subject,$message, "Cc: incarnation_enterprises@outlook.com", $headers)) {
+        if(mail($to, $subject, $message, $headers)) {
             $data = array(
                 "result" => true,
                 "message" => "Sent the mail successfully."

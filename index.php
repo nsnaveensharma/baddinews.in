@@ -43,7 +43,6 @@
 </body>
 
 <script>
-$(document).ready(function() {
 function onSubmit(token) {
 
         e.preventDefault();
@@ -82,8 +81,6 @@ function onSubmit(token) {
             
     }    
    }
-   
-});
 
 </script>
 

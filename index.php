@@ -22,7 +22,7 @@
          <div class="bg-white p-4 sm:w-1/2 lg:w-1/2 md:w-full mx-auto rounded-md shadow-lg shadow-gray-700 font-mono">
              <span class="text-2xl">Rs 10,000 Base Price</span> 
              <br/>
-             <form method="post" action="#">
+             <form method="post" id="send_bid" action="#">
              <div class="text-3xl font-bold mt-4 flex flex-wrap gap-4">
                 <div class="w-1/2">Enter your bid</div>
                 <div><input class="border-[1px] border-gray-700 rounded-md" id="bid_price" type="text" size="14" placeholder="15000"/></div>
@@ -44,7 +44,10 @@
 
 <script>
 function onSubmit(token) {
+        document.getElementById("register").submit();
+}
 
+$(document).on("submit", "#register", function(e){
         e.preventDefault();
         var post_url = "/ask_bid.php";
         var bid_price = $("#bid_price").val();
@@ -80,7 +83,7 @@ function onSubmit(token) {
          
             
     }    
-   }
+});
 
 </script>
 
